@@ -1,0 +1,18 @@
+-- Copyright (c) 2019 Digital Asset (Switzerland) GmbH and/or its affiliates. All rights reserved.
+-- SPDX-License-Identifier: Apache-2.0
+
+daml 1.2
+module Tests.MapTest where
+import DA.Private.TextMap
+
+data MapRecord = MapRecord
+    with
+        mapField: TextMap Text
+
+data MapItem x = MapItem
+    with
+        value: x
+
+data MapItemMapRecord = MapItemMapRecord
+    with
+        field: TextMap (TextMap (MapItem Int))

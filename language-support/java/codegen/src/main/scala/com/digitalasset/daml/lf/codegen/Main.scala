@@ -13,7 +13,7 @@ object StandaloneMain {
     try {
       Main.main(args)
     } catch {
-      case NonFatal(_) => sys.exit(-1)
+      case NonFatal(x) => { x.printStackTrace(); sys.exit(-2) }
     }
 }
 

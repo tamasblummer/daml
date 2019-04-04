@@ -8,8 +8,8 @@ import com.squareup.javapoet.{ClassName, TypeName}
 
 object Types {
   // All the relevant DAML-LF primitives as they are represented in the API
-  // ContractId is missing from the mapping because it's always used in its boxed form
-  val apiBoolean = ClassName.get(classOf[javaapi.data.Bool])
+    // ContractId is missing from the mapping because it's always used in its boxed form
+    val apiBoolean = ClassName.get(classOf[javaapi.data.Bool])
   val apiInt64 = ClassName.get(classOf[javaapi.data.Int64])
   val apiDecimal = ClassName.get(classOf[javaapi.data.Decimal])
   val apiText = ClassName.get(classOf[javaapi.data.Text])
@@ -20,6 +20,7 @@ object Types {
   val apiOptional = ClassName.get(classOf[javaapi.data.DamlOptional])
   val apiUnit = ClassName.get(classOf[javaapi.data.Unit])
   val apiContractId = ClassName.get(classOf[javaapi.data.ContractId])
+  val apiMap = ClassName.get(classOf[javaapi.data.DamlMap])
 
   // All the types part of the Java platform to which API types will be mapped to
   val javaNativeBoolean = TypeName.get(java.lang.Boolean.TYPE)
@@ -32,4 +33,5 @@ object Types {
   val javaLocalDate = ClassName.get(classOf[java.time.LocalDate])
   val javaList = ClassName.get(classOf[java.util.List[_]])
   val javaOptional = ClassName.get(classOf[java.util.Optional[_]])
+  val javaMap = ClassName.get(classOf[java.util.Map[_, _]])
 }
